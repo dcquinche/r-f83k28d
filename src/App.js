@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import { render } from 'enzyme';
+import React, { useState } from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
+function App () {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1)
+  };
+
+  render(); {
     return (
       <div>
-        <span className="value">0</span>
-        <button id="inc">Incrementa</button>
+        <span className="value">{count}</span>
+        <button id="inc" onClick={handleClick}>Incrementa</button>
       </div>
-    );
+    )
   }
 }
 
